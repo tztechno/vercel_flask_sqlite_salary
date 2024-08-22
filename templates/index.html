@@ -15,8 +15,8 @@
 
 <script>
 
-    const chartData = { data, tojson, safe };
-    // const chartData = {{ data | tojson | safe }};
+    // const chartData = { data, tojson, safe };
+    const chartData = {{ data | tojson | safe }};
 
     const labels = chartData.map(d => d.player);
     const salaries = chartData.map(d => d.season17_18);
