@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Salaries</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body>
+    <h1>NBA Salaries for the 2017-2018 Season</h1>
+    <canvas id="salaryChart" width="800" height="400"></canvas>
+
+<script>
+
+    const chartData = { data, tojson, safe };
+    // const chartData = {{ data | tojson | safe }};
+
+    const labels = chartData.map(d => d.player);
+    const salaries = chartData.map(d => d.season17_18);
+
+    const ctx = document.getElementById('salaryChart').getContext('2d');
+    const salaryChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Salary for 2017-2018 Season',
+                data: salaries,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        autoSkip: false, // Skip no labels for readability
+                        maxRotation: 90,
+                        minRotation: 45
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
