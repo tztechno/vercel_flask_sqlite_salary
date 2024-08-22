@@ -14,4 +14,8 @@ git commit -m "Initial commit"
 git remote add origin https://github.com/tztechno/vercel_flask_sqlite_salary.git
 git push -u origin master
 
+git add .
+git commit -m "2024-08-22"
+git push -u origin master
+
 ```
